@@ -12,6 +12,12 @@ if __name__ == '__main__':
             print(f"Round {count}: "+str(sum)+" no previous sum")
             last_sum = sum
         else:
-            print(f"Round {count}: " + str(sum))
+            if sum > last_sum:
+                print(f"Round {count}: {sum} (increase)")
+                increase_count += 1
+            elif sum == last_sum:
+                print(f"Round {count}: {sum} (no change)")
+            else:
+                print(f"Round {count}: {sum} (decrease)")
             last_sum = sum
     print("Number of increases: "+str(increase_count))
