@@ -13,7 +13,6 @@ def load_advent_input_as_dict(filename):
     file_dict = {}
     with open(filename, newline='') as f:
         for line in csv.reader(f):
+            file_dict[index]=line[0]
             index += 1
-            if index > 1:
-                file_dict[index]=int(line[0])
     return file_dict
